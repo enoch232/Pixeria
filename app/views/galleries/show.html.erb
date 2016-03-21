@@ -1,0 +1,17 @@
+<div style ="text-align:center">
+	<h1>Gallery</h1>
+	<div style = "text-align:center;">
+	<% @gallery.pictures.each do |picture| %>
+		<div style = "margin:1em" class = "animated fadeIn">
+			<%= image_tag picture.image.url(:large) %>
+		</div>
+	<% end %>
+	</div>
+	<div style = "margin:1em">
+		<%= link_to "Back", galleries_path, class: "btn btn-default" %>
+		<% if current_user == @gallery.user %>
+			<%= link_to "edit", edit_gallery_path(@gallery), class: "btn btn-default" %>
+			<%= link_to "delete", @gallery, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-danger" %>
+		<% end %>
+	</div>
+</div>

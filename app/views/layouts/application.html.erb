@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pixeria</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class = "notice-wrapper">
+		<p class="notice"><%= notice %></p>
+	    <p class="alert"><%= alert %></p>
+ 	</div>
+	<nav class="navbar navbar-default nav1">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" id= "unemphasize-body">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span> 
+	      </button>
+	      <div class="navbar-brand"><%= link_to "Pixeria", root_path, id: "logo" %></div>
+	    </div>
+	    <div class="collapse navbar-collapse" id="myNavbar">
+	      <ul class="nav navbar-nav navbar-right nav-content">
+	      	<% if user_signed_in? %>
+		        <li><%= link_to "New Gallery", new_gallery_path, id: "nav-content" %></li>
+		        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, id: "nav-content" %></li>
+	        <% else %>
+		        <li><%= link_to "Sign In", new_user_session_path, id: "nav-content" %></li>
+		        <li><%= link_to "Sign Up", new_user_registration_path, id: "nav-content" %></li>
+	        <% end %>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>	
+	<div style = "text-align:center">
+		<%= yield %>
+	</div>
+	<script>
+
+	</script>
+
+</body>
+</html>
+

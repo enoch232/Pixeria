@@ -1,0 +1,33 @@
+<div>
+	<div style = "text-align:center">
+		<h1 style = "color:#525252">Galleries</h1>
+	</div>
+	<div style = "text-align:center">
+		<% @galleries.each do |gallery| %>
+			<div class = "animated flipInX">
+				<div class = "indexEachGallery">
+					<div style = "float:left">
+						<% gallery.pictures.limit(1).each do |pic| %>
+							<%= link_to image_tag(pic.image.url(:thumb)), gallery %>
+						<% end %>
+					</div>
+					<div>
+						<div style = "padding:0.5em;font-size: 1.7em"><%= link_to gallery.title, gallery, class: "nolink" %> <span class="badge"><%= gallery.pictures.count %></span> <span style = "font-size:0.6em">by <%= gallery.user.email %> <%= time_ago_in_words(gallery.created_at) %> ago.</span></div>
+						<div class = ".visible-xs-block hidden-xs"><small><%= gallery.description %></small></div>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	</div>
+
+</div>
+<script>
+	$(document).ready(function(){
+		$(".indexEachGallery").mouseenter(function(){
+			$(this).animate({zoom:'120%'})
+		});
+		$(".indexEachGallery").mouseleave(function(){
+			$(this).animate({zoom:'100%'})
+		});
+	});
+</script>
