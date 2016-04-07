@@ -35,10 +35,18 @@ class GalleriesController < ApplicationController
   end
   def upvote
     @gallery = Gallery.find(params[:id])
-    @gallery.upvote_by current_user
-    respond_to do |format|
-      format.html {redirect_to :back}
-      format.js
+    if current_user.liked? @gallery
+      @gallery.downvote_by current_user
+      respond_to do |format|
+        format.html {redirect_to :back}
+        format.js
+      end
+    else
+      @gallery.upvote_by current_user
+      respond_to do |format|
+        format.html {redirect_to :back}
+        format.js
+      end
     end
   end
 

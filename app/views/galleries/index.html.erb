@@ -6,23 +6,24 @@
 	</div>
 	<div style = "text-align:center">
 		<% @galleries.each do |gallery| %>
-		<div class = "col-xs-1">
-			<%= link_to "Like", like_gallery_path(gallery), method: :put %> - <%= gallery.get_likes.size %>
+		<div class = "col-xs-1" style = "margin: 10rem 0 0 0">
+			<%= render "comment", gallery: gallery %>
+			
 		</div>
 
-			<div class = "animated flipInX col-xs-11" style = "">
-				<div class = "indexEachGallery">
-					<div style = "float:left">
-						<% gallery.pictures.limit(1).each do |pic| %>
-							<%= link_to image_tag(pic.image.url(:thumb)), gallery %>
-						<% end %>
-					</div>
-					<div>
-						<div style = "padding:0.5em;font-size: 1.7em"><%= link_to gallery.title, gallery, class: "nolink" %> <span class="badge"><%= gallery.pictures.count %></span> <span style = "font-size:0.6em">by <%= gallery.user.email %> <%= time_ago_in_words(gallery.created_at) %> ago.</span></div>
-						<div class = ".visible-xs-block hidden-xs"><small><%= gallery.description %></small></div>
-					</div>
+		<div class = "animated flipInX col-xs-11" style = "">
+			<div class = "indexEachGallery">
+				<div style = "float:left">						
+					<% gallery.pictures.limit(1).each do |pic| %>
+						<%= link_to image_tag(pic.image.url(:thumb)), gallery %>
+					<% end %>
+				</div>
+				<div>
+					<div style = "padding:0.5em;font-size: 1.7em"><%= link_to gallery.title, gallery, class: "nolink" %> <span class="badge"><%= gallery.pictures.count %></span> <span style = "font-size:0.6em">by <%= gallery.user.email %> <%= time_ago_in_words(gallery.created_at) %> ago.</span></div>
+					<div class = ".visible-xs-block hidden-xs"><small><%= gallery.description %></small></div>
 				</div>
 			</div>
+		</div>
 		<% end %>
 	</div>
 

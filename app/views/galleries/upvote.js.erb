@@ -1,1 +1,2 @@
-alert("HELLO");
+
+$("#<%= dom_id(@gallery) %> .show-likes-size").text("<%= @gallery.get_likes.size %>");
