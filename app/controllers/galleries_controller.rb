@@ -33,6 +33,14 @@ class GalleriesController < ApplicationController
   def show
     
   end
+  def upvote
+    @gallery = Gallery.find(params[:id])
+    @gallery.upvote_by current_user
+    respond_to do |format|
+      format.html {redirect_to :back}
+      format.js
+    end
+  end
 
   def create
   	@gallery = current_user.galleries.new(gallery_params)

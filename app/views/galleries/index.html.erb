@@ -1,10 +1,16 @@
+
 <div>
+
 	<div style = "text-align:center">
 		<h1 style = "color:#525252">Galleries</h1>
 	</div>
 	<div style = "text-align:center">
 		<% @galleries.each do |gallery| %>
-			<div class = "animated flipInX">
+		<div class = "col-xs-1">
+			<%= link_to "Like", like_gallery_path(gallery), method: :put %> - <%= gallery.get_likes.size %>
+		</div>
+
+			<div class = "animated flipInX col-xs-11" style = "">
 				<div class = "indexEachGallery">
 					<div style = "float:left">
 						<% gallery.pictures.limit(1).each do |pic| %>
@@ -23,11 +29,5 @@
 </div>
 <script>
 	$(document).ready(function(){
-		$(".indexEachGallery").mouseenter(function(){
-			$(this).animate({zoom:'120%'})
-		});
-		$(".indexEachGallery").mouseleave(function(){
-			$(this).animate({zoom:'100%'})
-		});
 	});
 </script>
