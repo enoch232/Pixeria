@@ -1,6 +1,7 @@
 <%= div_for(gallery) do %>
-	<span style = "font-size:3rem"><%= link_to like_gallery_path(gallery), method: :put, class: "glyphicon glyphicon-heart styled-heart", remote:true do %> 
+	<span style = "font-size:3rem;float:left"><%= link_to like_gallery_path(gallery), method: :put, class: "glyphicon glyphicon-heart styled-heart", remote:true do %> 
 		<% end %>
-		<span class = "show-likes-size label label-primary"><%= gallery.get_likes.size %></span>
+		<div style ="padding:0.5rem"></div>
+		<span class = "show-likes-size label label-primary" style = "float:right"><%= gallery.get_likes.size %></span>
 	</span>
 <% end %>
