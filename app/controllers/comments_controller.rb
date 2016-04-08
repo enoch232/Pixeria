@@ -4,7 +4,11 @@ class CommentsController < ApplicationController
 		@comment = @gallery.comments.new(comment_params)
 		@comment.user = current_user
 		if @comment.save
-			redirect_to gallery_path(@gallery)
+			respond_to do |format|
+				format.html{redirect_to gallery_path(@gallery)}
+				format.js
+			end
+
 		else
 			render :back
 		end
@@ -14,7 +18,10 @@ class CommentsController < ApplicationController
 		@comment = Comment.find(params[:id])
 		@comment.destroy
 		@gallery = Gallery.find(@comment.gallery_id)
-		redirect_to gallery_path(@gallery)
+		respond_to do |format|
+			format.html{redirect_to gallery_path(@gallery)}
+			format.js
+		end
 		
 	end
 	private
