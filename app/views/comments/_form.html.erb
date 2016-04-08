@@ -1,5 +1,5 @@
 <%= form_for(:comment, url: gallery_comments_path(@gallery)) do |f| %>
 	<%= f.text_area :body ,class: "form-control comment-body" %>
 	<br>
-	<%= f.submit "Add comment" %>
+	<%= f.submit "Add comment", class: "btn btn-default" %>
 <% end %>

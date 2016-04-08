@@ -10,9 +10,15 @@ class CommentsController < ApplicationController
 		end
 	end
 	def destroy
+
+		@comment = Comment.find(params[:id])
+		@comment.destroy
+		@gallery = Gallery.find(@comment.gallery_id)
+		redirect_to gallery_path(@gallery)
+		
 	end
 	private
 	def comment_params
-		params.require(:comment).permit(:body)
+		params.require(:comment).permit(:gallery_id ,:body)
 	end
 end

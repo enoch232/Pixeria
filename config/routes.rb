@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-
+  resources :comments
   resources :galleries do
     member do
       put "like", to: "galleries#upvote"
