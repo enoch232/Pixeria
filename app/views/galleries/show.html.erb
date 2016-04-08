@@ -10,7 +10,10 @@
 	<div>
 		<h1>Comment</h1>
 		<div>
-			
+			<%= render partial: @gallery.comments %>
+		</div>
+		<div style = "text-align:center;margin:10% 10% 10% 10%">
+			<%= render 'comments/form', comment: @gallery %>
 
 		</div>
 	</div>
