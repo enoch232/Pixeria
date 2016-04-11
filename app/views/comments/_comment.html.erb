@@ -1,10 +1,15 @@
 <%= div_for(comment) do %>
 <hr>
+
 <div style = "text-align:left;margin:0 0 0 13%">
-<%= comment.body %> <%= link_to "Delete", comment_path(comment), method: :delete, remote: true %>
+<%= comment.body %> 
+<% if current_user == comment.user || current_user == Gallery.find(comment.gallery_id).user %>
+	<%= link_to "Delete", comment_path(comment), method: :delete, remote: true %>
+<% end %>
 </div>
+
 <br>
 <div style ="text-align:left;margin:0 0 0 13%">
-Posted by <%= comment.user.email %>
+Posted by <%= comment.user.email %> <%= time_ago_in_words(comment.created_at) %> ago.
 </div>
 <% end %>
