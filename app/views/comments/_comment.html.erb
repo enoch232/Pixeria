@@ -2,10 +2,10 @@
 <hr>
 
 <div style = "text-align:left;margin:0 0 0 13%">
-<%= comment.body %> 
-<% if current_user == comment.user || current_user == Gallery.find(comment.gallery_id).user %>
-	<%= link_to "Delete", comment_path(comment), method: :delete, remote: true %>
-<% end %>
+	<%= comment.body %> 
+	<% if current_user == comment.user || current_user == Gallery.find(comment.gallery_id).user %>
+		<%= link_to "Delete", comment_path(comment), method: :delete, remote: true %>
+	<% end %>
 </div>
 
 <br>

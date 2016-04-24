@@ -2,7 +2,8 @@ class GalleriesController < ApplicationController
   before_action :gallery_find, only: [:show,:destroy,:edit, :update]
   before_action :authenticate_user!, except: [:index]
   def index
-    @galleries = Gallery.all.order("created_at desc")
+    @galleries = Gallery.all.paginate(:page => params[:page], per_page: 3).order("created_at desc")
+
 
   end
 

@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'will_paginate', '~> 3.1.0'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.6'
