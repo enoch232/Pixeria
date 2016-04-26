@@ -2,6 +2,117 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+@media (max-width: 3000px) and (min-width: 1133px) {
+  .indexEachGallery{
+    box-shadow:2px 2px 2px 2px #acacad;
+    text-align:center;
+    width:100rem;
+    display:inline-block;
+    background-color:white;
+    padding:0.1em;
+    opacity:0.74;
+    color:black;
+    margin-bottom:1rem;
+  }
+
+  .indexEachGallery:hover{
+  opacity: 1;
+
+  }
+  .voter{
+    position:relative;
+    z-index:1;
+    width:10rem;
+    top:3rem;
+  }
+}
+@media (max-width: 1132px) and (min-width: 750px) {
+  .indexEachGallery{
+    box-shadow:2px 2px 2px 2px #acacad;
+    text-align:center;
+    width:60rem;
+    display:inline-block;
+    background-color:white;
+    padding:0.1em;
+    opacity:0.74;
+    color:black;
+    margin-bottom:2rem;
+
+  }
+
+  .indexEachGallery:hover{
+  opacity: 1;
+
+  }
+  .voter{
+    position:relative;
+    z-index:1;
+    width:10rem;
+    float:left;
+    left:5%;
+    top:3rem;
+  }
+}
+@media (max-width: 750px) and (min-width: 505px) {
+  .indexEachGallery{
+    box-shadow:2px 2px 2px 2px #acacad;
+    text-align:center;
+    width:40rem;
+    display:inline-block;
+    background-color:white;
+    padding:0.1em;
+    opacity:0.74;
+    color:black;
+    margin-bottom:2rem;
+
+  }
+
+  .indexEachGallery:hover{
+  opacity: 1;
+
+  }
+  .voter{
+    position:relative;
+    z-index:1;
+    width:10rem;
+    float:left;
+    left:5%;
+    top:3rem;
+  }
+}
+@media all and (max-width: 504px) and (min-width: 360px) {
+  .indexEachGallery{
+    box-shadow:2px 2px 2px 2px #acacad;
+    text-align:center;
+    width:20rem;
+    display:inline-block;
+    background-color:white;
+    padding:0.1em;
+    opacity:0.74;
+    color:black;
+    margin-bottom:2rem;
+  }
+
+  .indexEachGallery:hover{
+  opacity: 1;
+
+  }
+  .voter{
+    position:relative;
+    z-index:1;
+    float:left;
+    left:3rem;
+    
+    top:3rem;
+  }
+}
+
+
+
+
+
+
 body{
 	background-color: #d0dede;
 }
@@ -35,21 +146,7 @@ body{
 	position:absolute;
 }
 
-.indexEachGallery{
-	box-shadow:2px 2px 2px 2px #acacad;
-	text-align:center;
-	width:100rem;
-	display:inline-block;
-	background-color:white;
-	padding:0.1em;
-	opacity:0.74;
-	color:black;
-}
 
-.indexEachGallery:hover{
-	opacity: 1;
-
-}
 .nolink{
 	color:#525252;
 	text-decoration: none;
@@ -78,10 +175,7 @@ body{
   text-decoration:none;
   color:crimson;
 }
-.voter{
-  position:relative;
-  z-index:1;
-}
+
 
 
 
@@ -117,10 +211,6 @@ body{
     .apple_pagination a:hover, .apple_pagination a:focus {
       text-decoration: underline; }
 
-.voter{
-  width:10rem;
-  top:3rem;
-}
 
 
 
@@ -347,7 +437,6 @@ body{
   -webkit-animation-name: flipInX;
   animation-name: flipInX;
 }
-
 
 
 
