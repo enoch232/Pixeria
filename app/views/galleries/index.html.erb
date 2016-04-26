@@ -4,12 +4,13 @@
 	</div>
 	<div style = "text-align:center">
 		<% @galleries.each do |gallery| %>
-		<div class = "col-xs-1" style = "margin: 10rem 0 0 0">
+
+		<div class = "voter" style = "margin: 2rem 0 0 0;display:inline-block">
 			<%= render "comment", gallery: gallery %>
 			
 		</div>
 
-		<div class = "animated flipInX col-xs-11" style = "">
+		<div class = "animated flipInX" style = "display:inline-block">
 			<div class = "indexEachGallery">
 				<div style = "float:left">						
 					<% gallery.pictures.limit(1).each do |pic| %>
@@ -22,6 +23,7 @@
 				</div>
 			</div>
 		</div>
+		<br>
 		<% end %>
 		<div>
 		<%= will_paginate @galleries %>

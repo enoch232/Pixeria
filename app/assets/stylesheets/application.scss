@@ -38,10 +38,9 @@ body{
 .indexEachGallery{
 	box-shadow:2px 2px 2px 2px #acacad;
 	text-align:center;
-	width:80%;
+	width:100rem;
 	display:inline-block;
 	background-color:white;
-	margin:1em 0 1em 0;
 	padding:0.1em;
 	opacity:0.74;
 	color:black;
@@ -118,7 +117,10 @@ body{
     .apple_pagination a:hover, .apple_pagination a:focus {
       text-decoration: underline; }
 
-
+.voter{
+  width:10rem;
+  top:3rem;
+}
 
 
 
