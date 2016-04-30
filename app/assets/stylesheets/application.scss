@@ -144,7 +144,36 @@
     top:3rem;
   }
   .showimg{
-  width:370px;
+  width:340px;
+  }
+}
+@media all and (max-width: 360px) and (min-width: 300px) {
+  .indexEachGallery{
+    box-shadow:2px 2px 2px 2px #acacad;
+    text-align:center;
+    width:20rem;
+    display:inline-block;
+    background-color:white;
+    padding:0.1em;
+    opacity:0.74;
+    color:black;
+    margin-bottom:2rem;
+  }
+
+  .indexEachGallery:hover{
+  opacity: 1;
+
+  }
+  .voter{
+    position:relative;
+    z-index:1;
+    float:left;
+    left:1rem;
+    
+    top:3rem;
+  }
+  .showimg{
+  width:280px;
   }
 }
 
